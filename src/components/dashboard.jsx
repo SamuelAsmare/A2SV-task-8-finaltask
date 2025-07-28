@@ -45,35 +45,35 @@ const Dashboard=()=>{
             <h1 className="font-extrabold text-xl ">About</h1>
             <div>
             <div className="flex gap-3">{/* posted on */}
-              <PlusCircleIcon className="h-10 p-1 text-blue-500 border rounded-full border-gray-300"/>
+              <PlusCircleIcon className="h-10 p-2 text-blue-500 border rounded-full border-gray-300"/>
               <section>
                 <p>Posted on</p>
                 <p>{json.about.posted_on}</p>
               </section>
             </div>
             <div className="flex gap-3">{/* deadline */}
-              <FireIcon className="h-10 p-1 text-blue-500 border rounded-full border-gray-300"/>
+              <FireIcon className="h-10 p-2 text-blue-500 border rounded-full border-gray-300"/>
               <section>
                 <p>Deadline</p>
                 <p>{json.about.deadline}</p>
               </section>
             </div>
             <div className="flex gap-3">{/* Location */}
-              <MapPinIcon className="h-10 p-1 text-blue-500 border rounded-full border-gray-300"/>
+              <MapPinIcon className="h-10 p-2 text-blue-500 border rounded-full border-gray-300"/>
               <section>
                 <p>Location</p>
                 <p>{json.about.location}</p>
               </section>
             </div>
             <div className="flex gap-3">{/*Start date  */}
-              <CalendarIcon className="h-10 p-1 text-blue-500 border rounded-full border-gray-300"/>
+              <CalendarIcon className="h-10 p-2 text-blue-500 border rounded-full border-gray-300"/>
               <section>
                 <p>Start date</p>
                 <p>{json.about.start_date}</p>
               </section>
             </div>
             <div className="flex gap-3">{/*End date  */}
-              <CalendarIcon className="h-10 p-1 text-blue-500 border rounded-full border-gray-300"/>
+              <CalendarIcon className="h-10 p-2 text-blue-500 border rounded-full border-gray-300"/>
               <section>
                 <p>End date</p>
                 <p>{json.about.end_date}</p>
