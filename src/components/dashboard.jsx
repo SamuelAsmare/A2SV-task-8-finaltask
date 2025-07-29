@@ -22,7 +22,6 @@ const Dashboard=()=>{
                         <CheckCircleIcon className="w-4 text-green-600"/>
                         <span className="list-none">{item}</span>
                     </div>
-
                 ))}
             </div>
             <div>{/*Candidates  */}
@@ -30,10 +29,7 @@ const Dashboard=()=>{
                  <p>age : {json.ideal_candidate.age}</p>
                  <p>gender : {json.ideal_candidate.gender}</p>
                  {json.ideal_candidate.traits.map((item)=>(
-                    <li>{item}</li>
-                 ))
-
-                 }
+                    <li>{item}</li>     ))}
             </div>
         <div className="flex items-center gap-1 w-full">
             <MapPinIcon className="w-5 h-4 text-blue-400" />
