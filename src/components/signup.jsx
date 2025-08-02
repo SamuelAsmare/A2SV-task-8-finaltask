@@ -1,8 +1,9 @@
 import React from 'react'
 import { useForm } from 'react-hook-form'
 import axios from 'axios'
-
+import {useNavigate ,Link} from 'react-router-dom'
 export default function SignUpForm() {
+  const navigate = useNavigate()
   const {
     register, handleSubmit, formState: { errors }, reset,  } = useForm();
 
@@ -12,6 +13,7 @@ export default function SignUpForm() {
     try {
       const res = await axios.post("https://akil-backend.onrender.com/signup",formdata)
       alert("signed up successfully",res)
+      navigate('/verify')
       reset(); 
     } catch (err) {
       alert(err)
@@ -96,9 +98,9 @@ export default function SignUpForm() {
 
         <p className="mt-4 text-center text-sm text-gray-600">
           Already have an account?{' '}
-          <a href="#" className="text-indigo-700 font-semibold hover:underline">
+          <Link to="login" className="text-indigo-700 font-semibold hover:underline">
             Login
-          </a>
+          </Link>
         </p>
 
         <p className="mt-4 text-xs text-center text-gray-500">

@@ -1,7 +1,7 @@
 import React from 'react'
 import { useForm } from 'react-hook-form'
 import axios from 'axios'
-
+import {Link} from 'react-router-dom'
 export default function Login() {
   const {
     register, handleSubmit, formState: { errors }, reset,  } = useForm();
@@ -12,9 +12,7 @@ export default function Login() {
       alert("signed up successfully",res)
       reset(); 
     } catch (err) {
-      alert(err)
-      console.error(err);
-    }
+      alert(err) ;console.error(err);  }
   };
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-50">
@@ -24,7 +22,6 @@ export default function Login() {
           <hr className="flex-grow  border-gray-300" />
           <hr className="flex-grow border-gray-300" />
         </div>
-
         <form className="space-y-4" onSubmit={handleSubmit(onSubmit)}>
           <div>
             <label className="block text-sm font-medium text-gray-700">Email Address</label>
@@ -36,7 +33,6 @@ export default function Login() {
             />
             {errors.email && <p className="text-red-500 text-sm">{errors.email.message}</p>}
           </div>
-
           <div>
             <label className="block text-sm font-medium text-gray-700">Password</label>
             <input
@@ -49,17 +45,15 @@ export default function Login() {
           </div>
           <button
             type="submit"
-            className="w-full bg-blue-950 hover:bg-indigo-900 text-white font-semibold py-2 rounded transition"
-          >
+            className="w-full bg-blue-950 hover:bg-indigo-900 text-white font-semibold py-2 rounded transition">
             Login
           </button>
         </form>
-
         <p className="mt-4 text-center text-sm text-gray-600">
           Don't have an account?{' '}
-          <a href="#" className="text-indigo-700 font-semibold hover:underline">
+          <Link to="/" className="text-indigo-700 font-semibold hover:underline">
             Sign up
-          </a>
+          </Link>
         </p>
       </div>
     </div>

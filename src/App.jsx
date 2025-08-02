@@ -8,11 +8,12 @@ function App() {
   return (
     <BrowserRouter>
     <Routes>
-      <Route path = "/" element = {<VerifyEmail/>}/>
+      <Route path = "/" element = {<Signup/>}/>
+      <Route path = "/verify" element = {<VerifyEmail/>}/>
+      <Route path = "/login" element = {<Login/>}/>
     </Routes>
     </BrowserRouter>
    
   )
 }
-
 export default App
