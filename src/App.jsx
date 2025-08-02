@@ -1,15 +1,14 @@
 import React from 'react';
 import './index.css';
-import { useState } from 'react'
 import {BrowserRouter,Routes,Route} from 'react-router-dom'
-import JobLists from './components/job-lists'
-import Dashboard from "./components/dashboard"
+import Signup from './components/signup'
+import Login from "./components/login"
+import VerifyEmail from './components/verify'
 function App() {
   return (
     <BrowserRouter>
     <Routes>
-      <Route path = "/" element = {<JobLists/>}/>
-      <Route path = "/dashboard/:id" element = {<Dashboard/>}/>
+      <Route path = "/" element = {<VerifyEmail/>}/>
     </Routes>
     </BrowserRouter>
    
