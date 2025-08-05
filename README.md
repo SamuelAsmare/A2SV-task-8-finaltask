@@ -1,13 +1,76 @@
-## This project is a simple **authentication system** built using **React** ans tailwind css
+# Job Portal Full-Stack Application
+
+## Overview
+A full-stack job portal application built with React on the frontend and a backend API, featuring user authentication, email verification, job listings, bookmarking jobs, and detailed job views. This project demonstrates a complete end-to-end solution with robust testing using Jest and Cypress.
+
+---
+
+## Features
+
+- **User Authentication**
+  - Signup with email and password
+
+    <img width="1919" height="959" alt="image" src="https://github.com/user-attachments/assets/ecefb355-2f19-4844-9188-2d5fc18160b6" />
+
+  - Login with secure authentication
+    
+    <img width="1919" height="863" alt="image" src="https://github.com/user-attachments/assets/98fe5532-bc96-4249-ae43-0fdf35794427" />
+
+  - Email verification to activate accounts
+
+   <img width="1870" height="878" alt="image" src="https://github.com/user-attachments/assets/d7811e99-6a14-4e7a-8e64-2b575ba96632" />
+  
+  - Smooth transition from page to page and loading data from the API
+
+- **Job Listings**
+  - Browse a list of available jobs
+
+  - View detailed job information on a separate page
+  
+- **Bookmarking**
+  - Bookmark/unbookmark jobs to save for later
+  - View all bookmarked jobs in a dedicated section
+- **Responsive UI**
+  - Mobile-friendly and accessible design
+- **Testing**
+  - Unit and integration tests with **Jest**
+  - End-to-end tests with **Cypress**
+
+---
+
+## Tech Stack
+
+- **Frontend:** React, React Router, Axios, Context API / Redux (if used)
+- **Backend:** Node.js, Express.js (or your backend framework)
+- **Database:** (Your database choice, e.g., MongoDB, PostgreSQL)
+- **Authentication:** JWT / OAuth (specify if used)
+- **Email Verification:** Nodemailer / third-party service (e.g., SendGrid)
+- **Testing:**
+  - Jest (unit and integration testing)
+  - Cypress (end-to-end testing)
+- **Deployment:** (Optional - Vercel, Netlify, Heroku, etc.)
+
+---
+
+## Getting Started
+
+### Prerequisites
+- Node.js (v14+ recommended)
+- npm or yarn
+- (Optional) Database setup instructions
+
+### Installation
+```bash
+git clone https://github.com/yourusername/job-portal.git
+cd job-portal
+npm install
+# or yarn install
 
 ## ✅ Sign Up
-  <img width="1919" height="959" alt="image" src="https://github.com/user-attachments/assets/ecefb355-2f19-4844-9188-2d5fc18160b6" />
-
+  
 ## 🔐 Login
-  <img width="1919" height="863" alt="image" src="https://github.com/user-attachments/assets/98fe5532-bc96-4249-ae43-0fdf35794427" />
 
 ## ✉️ Email Verification (with OTP)
-  <img width="1870" height="878" alt="image" src="https://github.com/user-attachments/assets/d7811e99-6a14-4e7a-8e64-2b575ba96632" />
 
 ## 📦 Real API Integration
  
