@@ -1,18 +1,24 @@
-import React from 'react'
+import React,{useState} from 'react'
 import { useForm } from 'react-hook-form'
 import axios from 'axios'
-import {Link} from 'react-router-dom'
+
+import {Link,useNavigate} from 'react-router-dom'
 export default function Login() {
+  const navigate = useNavigate()
+  const [loading,setloading] = useState(false)
   const {
     register, handleSubmit, formState: { errors }, reset,  } = useForm();
   const onSubmit = async (data) => {
-    console.log("Submitting form...", data)
+    console.log("Submitting the login form...", data)
     try {
-      const res = await axios.post("https://akil-backend.onrender.com/signup",data)
-      alert("signed up successfully",res)
+      setloading(true)
+      const res = await axios.post("https://akil-backend.onrender.com/login",data)
+      localStorage.setItem("token",res.data.data.accessToken);
+      navigate("/joblists")
       reset(); 
     } catch (err) {
       alert(err) ;console.error(err);  }
+    setloading(false)
   };
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-50">
@@ -45,9 +51,10 @@ export default function Login() {
           </div>
           <button
             type="submit"
-            className="w-full bg-blue-950 hover:bg-indigo-900 text-white font-semibold py-2 rounded transition">
-            Login
-          </button>
+            className={`w-full hover:bg-indigo-900 text-white font-semibold py-2 rounded transition
+            ${loading?"bg-blue-200 cursor-not-allowed":"cursor-pointer bg-blue-700"}`}>
+            {loading?"please wait ...":"Continue"}          
+            </button>
         </form>
         <p className="mt-4 text-center text-sm text-gray-600">
           Don't have an account?{' '}

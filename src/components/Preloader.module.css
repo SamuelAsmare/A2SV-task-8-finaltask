@@ -1,0 +1,26 @@
+.loader {
+  margin:auto;
+  margin-top:20vh;
+  width: 15px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  animation: l5 1s infinite linear alternate;
+}
+@keyframes l5 {
+  0%  {
+    box-shadow: 20px 0 #078930, -20px 0 #FCDD0922; 
+    background: #DA121A;
+  }
+  33% {
+    box-shadow: 20px 0 #FCDD09, -20px 0 #07893022; 
+    background: #DA121A22;
+  }
+  66% {
+    box-shadow: 20px 0 #FCDD0922, -20px 0 #078930; 
+    background: #DA121A44;
+  }
+  100% {
+    box-shadow: 20px 0 #07893022, -20px 0 #FCDD09; 
+    background: #DA121A;
+  }
+}

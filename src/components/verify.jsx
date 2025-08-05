@@ -1,10 +1,13 @@
 import React, { useState, useEffect, useRef } from 'react'
+import {useNavigate} from "react-router-dom"
+import axios from 'axios'
 
 export default function VerifyEmail() {
+  const navigate = useNavigate()
   const [code, setCode] = useState(['', '', '', ''])
   const inputsRef = useRef([])
-
-  // Timer state (e.g., 60 seconds)
+  const [loading,setloading] = useState(false)
+   
   const [timer, setTimer] = useState(60)
 
   // Countdown effect
@@ -37,11 +40,24 @@ export default function VerifyEmail() {
   }
 
   // You can add submit handler here if needed
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    const verificationCode = code.join('')
-    console.log('Verifying code:', verificationCode)
-    // send verificationCode to backend
+    try{
+
+      setloading(true)
+      const OTP= code.join('')
+      const email = localStorage.getItem('pendingemail')
+      console.log(email)
+      console.log(OTP)
+      await axios.post('https://akil-backend.onrender.com/verify-email',{email , OTP})
+      alert("verified")
+      
+      navigate('/login')
+     }
+     catch(err){
+      alert(err)
+     }
+     setloading(false)
   }
 
   return (
@@ -70,14 +86,19 @@ export default function VerifyEmail() {
         </form>
 
         <button
-          type="submit"
-          className="w-full bg-indigo-700 text-white py-2 rounded-md font-semibold hover:bg-indigo-800 transition"
-        >
-          Continue
+          // type="submit"
+          onClick={handleSubmit}
+          className={`w-full py-2 rounded-md font-semibold transition text-white
+            ${loading
+              ? 'bg-blue-50 text-white cursor-not-allowed'
+              : 'bg-indigo-700 cursor-pointer hover:bg-indigo-800'}
+          `}
+          >
+          {loading?"Wait.....":"Verify"}
         </button>
 
         <p className="mt-6 text-gray-500 text-sm">
-          You can request to resend the code{" "}
+          You can request to <span className="text-blue-500 font-bold">resend </span>the code{" "}
           <span className="font-semibold text-indigo-600">{timer}s</span>.
         </p>
       </div>

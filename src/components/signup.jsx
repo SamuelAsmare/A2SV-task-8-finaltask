@@ -1,24 +1,26 @@
-import React from 'react'
+import React,{useState} from 'react'
 import { useForm } from 'react-hook-form'
 import axios from 'axios'
 import {useNavigate ,Link} from 'react-router-dom'
 export default function SignUpForm() {
   const navigate = useNavigate()
+  const [loading, setloading] = useState(false)
   const {
     register, handleSubmit, formState: { errors }, reset,  } = useForm();
-
-  const onSubmit = async (data) => {
+    const onSubmit = async (data) => {
     console.log("Submitting form...", data);
     const formdata = {...data,role:'user'}
     try {
-      const res = await axios.post("https://akil-backend.onrender.com/signup",formdata)
-      alert("signed up successfully",res)
+      setloading(true)
+      await axios.post("https://akil-backend.onrender.com/signup",formdata)
+      localStorage.setItem('pendingemail',formdata.email)
       navigate('/verify')
       reset(); 
     } catch (err) {
       alert(err)
       console.error(err);
     }
+    setloading(false)
   };
 
   return (
@@ -90,9 +92,13 @@ export default function SignUpForm() {
           </div>
           <button
             type="submit"
-            className="w-full cursor-pointer bg-blue-950 hover:bg-indigo-900 text-white font-semibold py-2 rounded transition"
-          >
-            Continue
+            className={`w-full py-2 rounded-md font-semibold transition text-white
+              ${loading
+                ? 'bg-blue-50 text-white cursor-not-allowed'
+                : 'bg-indigo-700 cursor-pointer hover:bg-indigo-800'}
+            `}
+           disabled={loading} >
+            {loading?"please wait":"Continue"}
           </button>
         </form>
 
