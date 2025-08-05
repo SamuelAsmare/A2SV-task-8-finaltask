@@ -13,7 +13,7 @@ const Bookmarks = () => {
   try {
     const token = localStorage.getItem("token");
     if (!token) {
-      alert("You must be logged in to fetch bookmarks.");
+      console.log("You must be logged in to fetch bookmarks.");
       setLoading(false);
       return;
     }

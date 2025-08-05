@@ -17,12 +17,12 @@ export default function Login() {
       navigate("/joblists")
       reset(); 
     } catch (err) {
-      alert(err) ;console.error(err);  }
+      console.error(err);  }
     setloading(false)
   };
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-50">
-      <div className="w-full max-w-md p-8 bg-white rounded-lg shadow-sm">
+      <div className="w-full max-w-md p-8 bg-white rounded-lg shadow">
         <h2 className="text-2xl font-bold text-center mb-6 text-gray-800">Welcome Back , </h2>
         <div className="flex gap-10 my-6">
           <hr className="flex-grow  border-gray-300" />
@@ -51,7 +51,7 @@ export default function Login() {
           </div>
           <button
             type="submit"
-            className={`w-full hover:bg-indigo-900 text-white font-semibold py-2 rounded transition
+            className={`w-full  text-white font-semibold py-2 rounded transition
             ${loading?"bg-blue-200 cursor-not-allowed":"cursor-pointer bg-blue-700"}`}>
             {loading?"please wait ...":"Continue"}          
             </button>

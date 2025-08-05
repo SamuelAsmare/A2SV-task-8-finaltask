@@ -49,20 +49,18 @@ export default function VerifyEmail() {
       const email = localStorage.getItem('pendingemail')
       console.log(email)
       console.log(OTP)
-      await axios.post('https://akil-backend.onrender.com/verify-email',{email , OTP})
-      alert("verified")
-      
+      await axios.post('https://akil-backend.onrender.com/verify-email',{email , OTP})     
       navigate('/login')
      }
      catch(err){
-      alert(err)
+      console.log(err)
      }
      setloading(false)
   }
 
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-gray-50 px-4">
-      <div className="max-w-md w-full bg-white p-8 rounded-lg shadow-md text-center">
+      <div className="max-w-md w-full bg-white p-8 rounded-lg shadow text-center">
         <h1 className="text-3xl font-bold mb-4 text-gray-900">Verify Email</h1>
         <p className="text-gray-600 mb-8">
           We have sent a verification code to your email. Please enter the 4-digit code below to verify your account.
@@ -91,7 +89,7 @@ export default function VerifyEmail() {
           className={`w-full py-2 rounded-md font-semibold transition text-white
             ${loading
               ? 'bg-blue-50 text-white cursor-not-allowed'
-              : 'bg-indigo-700 cursor-pointer hover:bg-indigo-800'}
+              : 'bg-indigo-700 cursor-pointer '}
           `}
           >
           {loading?"Wait.....":"Verify"}

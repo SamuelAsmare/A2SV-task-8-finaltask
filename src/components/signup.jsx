@@ -17,7 +17,7 @@ export default function SignUpForm() {
       navigate('/verify')
       reset(); 
     } catch (err) {
-      alert(err)
+      console.log(err)
       console.error(err);
     }
     setloading(false)
@@ -25,7 +25,7 @@ export default function SignUpForm() {
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-50">
-      <div className="w-full max-w-md p-8 bg-white rounded-lg shadow-sm">
+      <div className="w-full max-w-md p-8 bg-white rounded-lg shadow">
         <h2 className="text-2xl font-bold text-center mb-6 text-gray-800">Sign Up Today!</h2>
         <button className="flex items-center gap-2 justify-center w-full border border-gray-300 rounded-md py-2 cursor-pointer transition">
           <img
@@ -95,7 +95,7 @@ export default function SignUpForm() {
             className={`w-full py-2 rounded-md font-semibold transition text-white
               ${loading
                 ? 'bg-blue-50 text-white cursor-not-allowed'
-                : 'bg-indigo-700 cursor-pointer hover:bg-indigo-800'}
+                : 'bg-indigo-700 cursor-pointer'}
             `}
            disabled={loading} >
             {loading?"please wait":"Continue"}

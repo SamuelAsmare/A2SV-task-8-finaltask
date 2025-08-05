@@ -13,7 +13,7 @@ const JobDetails = () => {
         const found = res.data.data.find((job) => job.id === id);
         setJob(found);
       } catch (err) {
-        alert(err)
+        console.log(err)
       } finally {
         setLoading(false);
       }
