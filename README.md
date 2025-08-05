@@ -56,7 +56,8 @@ A full-stack job portal application built with React on the frontend and a backe
 
 ## Tech Stack
 
-- React, React Router, Axios, 
+- React, React Router, Axios,
+- styling : ***Tailwind CSS***
 - **Authentication:** JWT 
 - **Testing:**
   - Jest (unit and integration testing)
