@@ -24,7 +24,7 @@ const Bookmarks = () => {
     });
     setJobs(res.data.data);
   } catch (err) {
-    alert(err.response?.data?.message || "Failed to fetch bookmarks");
+    console.err(err.response?.data?.message || "Failed to fetch bookmarks");
   } finally {
     setLoading(false);
   }
@@ -49,7 +49,7 @@ const Bookmarks = () => {
     <div className="p-6 font-serif text-gray-700 bg-gray-50 flex flex-col items-left m-auto justify-center gap-10 w-full lg:w-3/4">
     <h1 className = "font-bold text-2xl">Welcome to Your Bookmark</h1>
       {jobs.map((job)=>(
-        <div className="border-1 border-gray-200 rounded-xl p-6 flex flex-col gap-5 cursor-pointer
+        <div className="border border-gray-200 rounded-xl p-6 flex flex-col gap-5 cursor-pointer
          transition duration-300 ease-in-out justify-between w-full lg:w-3/4 hover:shadow-lg "
          >
           {/* avater and title div*/}

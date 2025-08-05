@@ -54,7 +54,7 @@ const JobLists = () => {
       <Link to="/bookmarks" className="font-bold text-green-600 hover:text-green-500 transition">Bookmark</Link>
      </div> 
       {jobs.map((job)=>(
-        <div className="border-1 border-gray-200 rounded-xl p-6 flex flex-col gap-5 cursor-pointer
+        <div className="border border-gray-300 rounded-xl p-6 flex flex-col gap-5 cursor-pointer
          transition duration-300 ease-in-out justify-between w-full lg:w-3/4 hover:shadow-lg "
          onClick={()=>Go(job.id)}>
           {/* avater and title div*/}
